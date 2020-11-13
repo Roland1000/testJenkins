@@ -4,7 +4,7 @@ node{
             checkout scm
         }
         stage('build image'){
-            app = docker.build("roland/nginx")
+           docker.build("roland/nginx")
         }
         stage('Test image'){
             docker.image("roland/nginx").withRun('-p 80:80') {
