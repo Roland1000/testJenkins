@@ -7,7 +7,7 @@ node{
            docker.build("roland/nginx")
         }
         stage('Test image'){
-            docker.image("roland/nginx").withRun('-p 8085:80') {
+            docker.image("roland/nginx").withRun('-p 8800:80') {
                 c -> sh 'docker ps'
                      sh 'curl localhost'
             }
